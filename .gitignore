@@ -1,0 +1,5 @@
+# terraform
+.terraform
+
+# secrets
+terraform-photo-portfolio-service-account.json
