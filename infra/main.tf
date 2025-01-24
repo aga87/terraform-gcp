@@ -66,6 +66,7 @@ resource "google_compute_backend_bucket" "my_bucket_backend" {
 # Create HTTPS certificate 
 resource "google_compute_managed_ssl_certificate" "my_certificate" {
   provider = google-beta
+  project  = var.gcp_project
   name     = "photo-portfolio-website-certificate"
   managed {
     domains = [google_dns_record_set.my_dns_record.name]
