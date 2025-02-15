@@ -1,16 +1,23 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { images } from './data/images';
 
 export default function Home() {
+  // Get unique categories from the images array
+  const categories = Array.from(
+    new Set(images.flatMap((image) => image.categories))
+  );
+
   return (
     <section>
       <h1>My Photography Portfolio</h1>
-      <h2>Abstract</h2>
-      <Image
-        src="https://storage.googleapis.com/photo-portfolio-bucket/abstract/abstract1.jpg"
-        alt="abstract"
-        width={518}
-        height={448}
-      />
+      <h2>Categories</h2>
+      <ul>
+        {categories.map((category) => (
+          <li key={category}>
+            <Link href={`/${category.toLowerCase()}`}>{category}</Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
