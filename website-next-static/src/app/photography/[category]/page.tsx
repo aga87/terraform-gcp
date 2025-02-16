@@ -1,6 +1,5 @@
-// app/[category]/page.tsx
 import Link from 'next/link';
-import { ImageData, images } from '../data/images';
+import { ImageData, images } from '@/data/images';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
@@ -44,11 +43,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <section>
-      <Link href={'/'}>Back Home</Link>
-
       <h1>
         {category.charAt(0).toUpperCase() + category.slice(1)} Photography
       </h1>
+      <Link href="/photography">All categories</Link>
       <div className="image-gallery">
         {filteredImages.map((image, index) => (
           <div key={index} className="image-container">
