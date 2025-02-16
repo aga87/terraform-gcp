@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 
-const roboto = Roboto({
+const poppins = Poppins({
   weight: ['400', '500', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap', // prevent "flash of invisible text" (FOIT)
-  variable: '--font-roboto' // for use with Tailwind CSS through a CSS variable
+  variable: '--font-poppins' // for use with Tailwind CSS through a CSS variable
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} antialiased`}>{children}</body>
     </html>
   );
 }
