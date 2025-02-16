@@ -1,21 +1,71 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+  --breakpoint-custom-xs: 24rem;
+  --font-sans: var(--font-roboto);
 }
 
-@media (prefers-color-scheme: dark) {
+
+@layer utilities {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Enforce light theme */
+      --background: #ffffff;
+      --foreground: #171717;
+    }
+  }
+}
+
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5 {
+    @apply font-sans;
+  }
+
+  h1,
+  h2 {
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+/* Hides scrollbar but still allows scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* For Internet Explorer 10+ */
+  scrollbar-width: none; /* For Firefox */
 }
