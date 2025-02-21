@@ -3,3 +3,5 @@
 
 # secrets
 terraform-photo-portfolio-service-account.json
+
+**/.DS_Store
