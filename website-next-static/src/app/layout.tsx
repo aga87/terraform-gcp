@@ -28,7 +28,7 @@ export default function RootLayout({
         <header className="px-2">
           <Nav profile="aga" />
         </header>
-        {children}
+        <div className="h-[calc(100vh-64px)]">{children}</div>
       </body>
     </html>
   );

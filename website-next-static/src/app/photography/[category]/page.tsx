@@ -1,7 +1,8 @@
-import Link from 'next/link';
-import { ImageData, images } from '@/data/images';
-import Image from 'next/image';
 import { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import { ImageData, images } from '@/data/images';
+import { BackToTopButton } from '@/components';
 
 interface CategoryPageProps {
   params: {
@@ -43,10 +44,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <section>
-      <h1>
-        {category.charAt(0).toUpperCase() + category.slice(1)} Photography
+      <div className="fixed right-4 sm:right-6 md:right-12 bottom-20 xl:right-auto xl:left-1/2 xl:translate-x-[590px] z-10">
+        <BackToTopButton />
+      </div>
+      <h1 className="text-center text-3xl pt-4">
+        <Link href="/photography">Photography</Link>
       </h1>
-      <Link href="/photography">All categories</Link>
+      <h2 className="text-center text-3xl font-semibold py-4">{category}</h2>
       <div className="image-gallery">
         {filteredImages.map((image, index) => (
           <div key={index} className="image-container">

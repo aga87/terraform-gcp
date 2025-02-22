@@ -8,17 +8,19 @@ export default function Photography() {
   );
 
   return (
-    <section>
-      <h2>Categories</h2>
-      <ul>
-        {categories.map((category) => (
-          <li key={category}>
-            <Link href={`/photography/${category.toLowerCase()}`}>
-              {category}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <section className="h-full flex items-center justify-center">
+      <div>
+        {/* <h1 className="text-center text-3xl mb-8">Photography</h1> */}
+        <ul className="text-center text-2xl font-semibold">
+          {categories.map((category) => (
+            <li key={category}>
+              <Link href={`/photography/${category.toLowerCase()}`}>
+                {category}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
