@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ImageData, images } from '@/data/images';
+import { ImageData, images, getImageSize } from '@/data/images';
 import { BackToTopButton } from '@/components';
 
 interface CategoryPageProps {
@@ -50,18 +50,23 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       <h1 className="text-center text-3xl pt-4">
         <Link href="/photography">Photography</Link>
       </h1>
-      <h2 className="text-center text-3xl font-semibold py-4">{category}</h2>
-      <div className="image-gallery">
-        {filteredImages.map((image, index) => (
-          <div key={index} className="image-container">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-            />
-          </div>
-        ))}
+      <h2 className="text-center text-3xl font-semibold pt-4 pb-12">
+        {category}
+      </h2>
+      <div className="flex flex-col items-center gap-y-36">
+        {filteredImages.map((image, index) => {
+          const size = getImageSize(image.aspectRatio);
+          return (
+            <div key={index}>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={size.width}
+                height={size.height}
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
