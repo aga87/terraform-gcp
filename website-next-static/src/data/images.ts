@@ -6,8 +6,10 @@ export type ImageData = {
 };
 
 const CATEGORIES = Object.freeze({
+  abstract: 'abstract',
+  albums: 'albumcovers',
   bw: 'blackandwhite',
-  macro: 'macro and mini',
+  macro: 'macromini',
   nature: 'nature',
   other: 'other',
   urban: 'urban'
@@ -121,8 +123,98 @@ export const images: ImageData[] = [
   },
   {
     src: '/images/bw-bike.jpg',
-    alt: 'Urban',
+    alt: 'Bike',
     aspectRatio: '3/2',
+    categories: [CATEGORIES.bw]
+  },
+  {
+    src: '/images/bw-bike2.jpg',
+    alt: 'Bike',
+    aspectRatio: '3/2',
+    categories: [CATEGORIES.bw]
+  },
+  {
+    src: '/images/bw-bike3.jpg',
+    alt: 'Bike',
+    aspectRatio: '3/2',
+    categories: [CATEGORIES.bw]
+  },
+  {
+    src: '/images/bw-display.jpg',
+    alt: 'Display',
+    aspectRatio: '4/3',
+    categories: [CATEGORIES.bw, CATEGORIES.urban]
+  },
+  {
+    src: '/images/album-candle.jpg',
+    alt: 'Abstract',
+    aspectRatio: '3/2',
+    categories: [CATEGORIES.abstract, CATEGORIES.albums]
+  },
+  {
+    src: '/images/other-rose.jpg',
+    alt: 'Rose',
+    aspectRatio: '3/2',
+    categories: [CATEGORIES.albums, CATEGORIES.other]
+  },
+  {
+    src: '/images/bw-urban-frogs.jpg',
+    alt: 'Frogs',
+    aspectRatio: '3/2',
+    categories: [CATEGORIES.bw, CATEGORIES.urban]
+  },
+  {
+    src: '/images/bw-bullpit.jpeg',
+    alt: 'Bull pit',
+    aspectRatio: '3/4',
+    categories: [CATEGORIES.bw]
+  },
+  {
+    src: '/images/bw-feet.jpeg',
+    alt: 'Feet',
+    aspectRatio: '4/3',
+    categories: [CATEGORIES.bw]
+  },
+  {
+    src: '/images/bw-venice.jpeg',
+    alt: 'Venice',
+    aspectRatio: '3/4',
+    categories: [CATEGORIES.bw]
+  },
+  {
+    src: '/images/bw-urban-kato.jpeg',
+    alt: 'Kato',
+    aspectRatio: '3/4',
+    categories: [CATEGORIES.bw, CATEGORIES.urban]
+  },
+  {
+    src: '/images/bw-urban-ufo.jpeg',
+    alt: 'Urban',
+    aspectRatio: '3/4',
+    categories: [CATEGORIES.bw, CATEGORIES.urban]
+  },
+  {
+    src: '/images/bw-urban-chimney.jpeg',
+    alt: 'Urban',
+    aspectRatio: '3/4',
+    categories: [CATEGORIES.bw, CATEGORIES.urban]
+  },
+  {
+    src: '/images/urban-zebra.jpeg',
+    alt: 'Urban',
+    aspectRatio: '3/4',
+    categories: [CATEGORIES.urban]
+  },
+  {
+    src: '/images/bw-stairs.jpeg',
+    alt: 'Stairs',
+    aspectRatio: '3/4',
+    categories: [CATEGORIES.bw]
+  },
+  {
+    src: '/images/bw-coast.jpeg',
+    alt: 'Coast',
+    aspectRatio: '4/3',
     categories: [CATEGORIES.bw]
   }
 ];
